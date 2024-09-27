@@ -1,4 +1,4 @@
-import 'package:app/pages/my_home_page.dart';
+import 'package:app/pages/first_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app/components/consultasmongo.dart';
 
@@ -15,6 +15,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(colorSchemeSeed: Colors.blue),
         debugShowCheckedModeBanner: false,
         title: "AO_EX parametrizer",
-        home: MyHomePage());
+        home: FirstPage());
   }
 }

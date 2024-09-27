@@ -15,9 +15,13 @@ class ConsultasMongo {
     }
   }
 
-  static Future<List<Map<String, dynamic>>> obtenerAlgoritmos() async {
+  static Future<List<Map<String, dynamic>>> obtenerAlgoritmosE() async {
     final algoritmos = await exhaustiva_tasks!.find().toList();
-    print(algoritmos);
+    return algoritmos;
+  }
+
+  static Future<List<Map<String, dynamic>>> obtenerAlgoritmosAO() async {
+    final algoritmos = await AO_tasks!.find().toList();
     return algoritmos;
   }
 }

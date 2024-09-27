@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app/pages/tercera_page.dart';
 
-class SecondPage extends StatefulWidget {
+/*class SecondPage extends StatefulWidget {
   final dato;
 
   const SecondPage({super.key, required this.dato});
@@ -48,4 +48,4 @@ void _showTerceraPage(context) {
           TerceraPage(dato: "Dato enviado desde la segunda pantalla"),
     ),
   );
-}
+}*/

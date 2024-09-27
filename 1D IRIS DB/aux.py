@@ -3,43 +3,89 @@ import matplotlib.pyplot as plt
 import numpy as np
 import io
 import base64
+import os
 
-# Add path to the Octave function
-ruta = "/Users/diegobravosoto/Desktop/codigos_dos/1D IRIS DB"
-octave.addpath(ruta)
 
 N=10
 T=10
-UB=120
+neuronas=120
+muestras=0.8
 
-#script= "exhaustiva("+str(N)+","+str(T)+","+str(UB)+")"
-script_dos = "aquila("+str(N)+","+str(T)+")"
+# Add path to the Octave function
+ruta = "/Users/diegobravosoto/Desktop/proyecto_de_titulo/tesis/1D IRIS DB"
+octave.addpath(ruta)
+
+nombre_archivo = "iris.dt"
+ruta_completa = os.path.join(ruta, nombre_archivo)
+
+if not os.path.exists(ruta_completa):
+    raise FileNotFoundError(f"El archivo {ruta_completa} no existe.")
+
+# Ensure the file name is correctly passed as a string
+script_tres = f"archivos('{nombre_archivo}')"
+
+print(f"Ejecutando el script: {script_tres}")
+
+# Ejecutar y obtener los resultados
+try:
+    muestras, atributos, clases = octave.eval(script_tres, nout=3)
+    print(f"Muestras: {muestras}, Atributos: {atributos}, Clases: {clases}")
+except Exception as e:
+    print(f"Error al ejecutar el script en Octave: {e}")
 
 
 # Call the Octave function
 #neuronas_ocultas, Obj_pond, acc_list, gmean_list = octave.eval(script, nout=4)
-Nr, Tr, conv, k, accuracy_list, gmean_list, cantIterPorc = octave.feval("aquila", nout=7)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Nr, Tr, conv, k, accuracy_list, gmean_list, cantIterPorc = octave.feval("aquila", nout=7)
 #lista_simple = [item for sublist in conv for item in sublist]
 
 # Puedes cambiar este valor por el que desees
 
-print(len(conv[0][0]))
+# print(len(conv[0][0]))
 
-lista = list(range(1, len(conv[0][0])+1))
-print(lista)
-
-
+# lista = list(range(1, len(conv[0][0])+1))
+# print(lista)
 
 
-for i in range(len(conv[0])):
-    promedios = np.mean(conv[0][i], axis=1)
 
-    plt.plot(lista, promedios)
-    plt.xlabel('Iteraciones')
-    plt.ylabel('Performance')
-    plt.grid()
-    plt.title('Aquila')
-    plt.show()
+
+# for i in range(len(conv[0])):
+#     promedios = np.mean(conv[0][i], axis=1)
+
+#     plt.plot(lista, promedios)
+#     plt.xlabel('Iteraciones')
+#     plt.ylabel('Performance')
+#     plt.grid()
+#     plt.title('Aquila')
+#     plt.show()
 
 
 
