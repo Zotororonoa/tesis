@@ -29,10 +29,9 @@ Lista de dependencias necesarias:
 
 2. Instala las dependencias:
     ```bash
-    python3 -m venv env
-source env/bin/activate
-pip install celery numpy matplotlib flask oct2py 
-
+    	python3 -m venv env
+	source env/bin/activate
+	pip install celery numpy matplotlib flask oct2py 
     ```
 
 3. Inicia Redis Server:
