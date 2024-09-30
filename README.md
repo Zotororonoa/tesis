@@ -27,7 +27,7 @@ Lista de dependencias necesarias:
     cd tesis
     ```
 
-2. Instala las dependencias:
+2. Activar entorno virtual:
     ```bash
     python3 -m venv env
 source env/bin/activate
